@@ -1,4 +1,3 @@
-package AhorcadoJaossacas;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
