@@ -1,4 +1,3 @@
-package HallarPrimos;
 import java.util.Scanner;
 
 
