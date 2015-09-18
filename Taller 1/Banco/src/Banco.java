@@ -13,9 +13,10 @@ public class Banco {
 		
 		if (Monto%50 == 0){
 		
-		//Variables para billetes de últimas deniminaciones
+		//Variables
 			int Billete_moneda = 50000;
 			int Repeticiones_ciclo = 0;
+			
 		//Cálculo de la cantidad de billetes y monedas que se necesitan de cada denominación y su impresión en pantalla
 			while (Billete_moneda>=50){
 			int Cantidad_Billete = (int)(Monto/Billete_moneda);
