@@ -16,10 +16,10 @@ public class Ahorcado {
 			
 		//Selección de una palabra al azar
 			Random Aleatorio = new Random();
-			int R = Aleatorio.nextInt(450);
+			int Número_aleatorio = Aleatorio.nextInt(450);
 			int w = 0;
 			String Palabra = "";
-			while (w<R){
+			while (w<Número_aleatorio){
 				Palabra = Lector.readLine();
 				w++;
 			};

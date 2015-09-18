@@ -4,16 +4,21 @@ import java.util.Scanner;
 public class Banco {
 
 	public static void main (String[] args){
+	
+	//Función de lectura y variable principal
 		Scanner Leer = new Scanner (System.in);
 		System.out.print("Ingrese el monto que desea retirar: $");
 		double Monto = Leer.nextDouble();
 		System.out.println("");
 		
 		if (Monto%50 == 0){
+		
+		//Variables para billetes de últimas deniminaciones
 			int Billete1 = 50000;
 			int Billete2 = 20000;
 			int Billete3 = 10000;
 			
+		//Cálculo de la cantidad de billetes y monedas que se necesitan de cada denominación
 			int Cantidad_$50000 = (int)(Monto/Billete1);
 			Monto = Monto-Cantidad_$50000*Billete1;
 			int Cantidad_$20000 = (int)(Monto/Billete2);
@@ -34,6 +39,7 @@ public class Banco {
 			Monto = Monto-Cantidad_$100*(Billete3/100);
 			int Cantidad_$50 = (int)(1000*Monto/Billete1);
 			
+		//Impresión en pantalla del retiro de dinero
 			if (Cantidad_$50000 > 0){System.out.println("Billetes de $50.000: "+Cantidad_$50000);}
 			if (Cantidad_$20000 > 0){System.out.println("Billetes de $20.000: "+Cantidad_$20000);}
 			if (Cantidad_$10000 > 0){System.out.println("Billetes de $10.000: "+Cantidad_$10000);}
