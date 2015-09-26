@@ -1,17 +1,25 @@
 
 public class Rectángulo {
 	
-	double Largo;
-	double Ancho;
+	private double Largo;
+	private double Ancho;
 	
-	public void setLargo (){
-		if (Largo<0){Largo = -Largo;}
-		if (Largo>20){Largo = 20;}
+	public Rectángulo(){
+		Largo = 1;
+		Ancho = 1;
 	}
 	
-	public void setAncho (){
-		if (Largo<0){Ancho = -Ancho;}
-		if (Largo>20){Ancho = 20;}
+	public void setLargo (double largo){
+		Largo = largo;
+		if (Largo < 0){Largo = -Largo;}
+		if (Largo == 0){Largo = 1;}
+		if (Largo > 20){Largo = 20;}
+	}
+	
+	public void setAncho (double ancho){
+		Ancho = ancho;
+		if (Ancho<0){Ancho = -Ancho;}
+		if (Ancho>20){Ancho = 20;}
 	}
 	
 	public double Perímetro(){

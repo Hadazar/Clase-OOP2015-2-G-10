@@ -1,16 +1,28 @@
 
 public class Empleado {
 	
-	String Nombre;
-	String Apellido;
-	double Salario_mensual;
+	private String nombre;
+	private String apellido;
+	private double salarioMensual;
 	
 	public Empleado(String nombre, String apellido, double salario){
-		this.Nombre = nombre;
-		this.Apellido = apellido;
+		this.nombre = nombre;
+		this.apellido = apellido;
 		if (salario < 0){salario = 0;}
-		this.Salario_mensual = salario;
+		salarioMensual = salario;
 	};
+	
+	public String getNombre(){
+		return nombre;
+	}
+	
+	public String getApellido(){
+		return apellido;
+	}
+	
+	public double getSalarioMensual(){
+		return salarioMensual;
+	}
 	
 	public static double Incremento_salarial (double Porcentaje, double Salario_mensual){
 		return Salario_mensual * (1 + Porcentaje / 100);
