@@ -1,1 +1,0 @@
-Este diagrama UML fue hecho en ArgoUML 
