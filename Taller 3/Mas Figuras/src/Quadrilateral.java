@@ -1,10 +1,10 @@
 
 public class Quadrilateral {
 
-	double[] corner1 = new double[2];
-	double[] corner2 = new double[2];
-	double[] corner3 = new double[2];
-	double[] corner4 = new double[2];
+	private double[] corner1 = new double[2];
+	private double[] corner2 = new double[2];
+	private double[] corner3 = new double[2];
+	private double[] corner4 = new double[2];
 	
 	public void setAttributes (double[] corner1, double[] corner2, double[] corner3, double[] corner4){
 		this.corner1 = corner1;
