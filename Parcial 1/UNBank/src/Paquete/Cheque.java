@@ -4,7 +4,7 @@ public class Cheque extends ProductoBancario{
 	
 	String beneficiario;
 	double monto;
-	String pagador;
+	String pagado;
 	
 	void setAtributos(String beneficiario, double monto, String pagador){
 		
