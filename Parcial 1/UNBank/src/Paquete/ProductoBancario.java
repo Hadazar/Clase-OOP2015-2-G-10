@@ -12,7 +12,7 @@ public class ProductoBancario {
 	};
 	
 	String getCódigo(){
-		return código;
+		return código
 	};
 	
 	Calendar getFechaDeOrigen(){
