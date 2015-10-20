@@ -1,18 +1,18 @@
 package Paquete;
-import java.util.Calendar;
+import java.util.endar;
 
 public class ProductoBancario {
 	
-	String c骴igo;
+	String c贸digo;
 	Calendar fechaDeOrigen;
 	
-	void setAtributos(String c骴igo, Calendar fechaDeOrigen){
-		this.c骴igo = c骴igo;
+	void setAtributos(String c贸digo, Calendar fechaDeOrigen){
+		this.c贸digo = c贸digo;
 		this.fechaDeOrigen = fechaDeOrigen;
 	};
 	
-	String getC骴igo(){
-		return c骴igo;
+	String getC贸digo(){
+		return c贸digo;
 	};
 	
 	Calendar getFechaDeOrigen(){
