@@ -3,7 +3,7 @@ package Paquete;
 public class Cheque extends ProductoBancario{
 	
 	String beneficiario;
-	double monto;
+	double mont;
 	String pagador;
 	
 	void setAtributos(String beneficiario, double monto, String pagador){
