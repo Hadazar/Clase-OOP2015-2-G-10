@@ -3,20 +3,26 @@ import java.util.Calendar;
 
 public class ProductoBancario {
 	
-	String codigo;
-	Calendar fechaDeOrigen;
+	private String codigo;
+	private Calendar fechaDeOrigen;
+	private static Calendar fechaActual;
 	
-	void setAtributos(String codigo, Calendar fechaDeOrigen){
+	public void setAtributos(String codigo, Calendar fechaDeOrigen, Calendar fechaActual){
 		this.codigo = codigo;
 		this.fechaDeOrigen = fechaDeOrigen;
+		this.fechaActual = fechaActual;
 	};
 	
-	String getCodigo(){
+	public String getCodigo(){
 		return codigo;
 	};
 	
-	Calendar getFechaDeOrigen(){
+	public Calendar getFechaDeOrigen(){
 		return fechaDeOrigen;
+	};
+	
+	public Calendar getFechaActual(){
+		return fechaActual;
 	};
 	
 }
