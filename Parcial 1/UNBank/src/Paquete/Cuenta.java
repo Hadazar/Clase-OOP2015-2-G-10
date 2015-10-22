@@ -2,14 +2,14 @@ package Paquete;
 
 public class Cuenta extends ProductoBancario{
 
-	double depósito;
+	double deposito;
 	
-	 void setDepóstito (double depósito){
-		 this.depósito = depósito;
+	 void setDepostito (double deposito){
+		 this.deposito = deposito;
 	 };
 	 
-	 double getDepósito(){
-		 return depósito;
+	 double getDeposito(){
+		 return deposito;
 	 };
 	 
 	 int retirar (int retiro){

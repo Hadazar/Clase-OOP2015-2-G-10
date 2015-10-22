@@ -4,17 +4,17 @@ public class Cliente {
 	
 	 String nombre;
 	 String documento;
-	 String teléfono;
+	 String telefono;
 	 double deuda;
 	 double capitalTotal;
 	 int dineroBolsillo;
 	 String tipo;
 	 int númeroDeProductosBancarios;
 	 
-	 void setAtributos(String nombre, String documento, String teléfono, double deuda, double capitalTotal, int dineroBolsillo, String tipo, int númeroDeProductosBancarios){
+	 void setAtributos(String nombre, String documento, String telefono, double deuda, double capitalTotal, int dineroBolsillo, String tipo, int númeroDeProductosBancarios){
 		 this.nombre = nombre;
 		 this.documento = documento;
-		 this.teléfono = teléfono;
+		 this.telefono = telefono;
 		 this.deuda = deuda;
 		 this.capitalTotal = capitalTotal;
 		 this.dineroBolsillo = dineroBolsillo;
@@ -30,8 +30,8 @@ public class Cliente {
 		 return documento;
 	 };
 	 
-	 String getTeléfono(){
-		 return teléfono;
+	 String getTelefono(){
+		 return telefono;
 	 };
 	 
 	 double getDeuda(){

@@ -1,17 +1,17 @@
 package Paquete;
 
-public class Préstamo extends ProductoBancario{
+public class Prestamo extends ProductoBancario{
 
 	double monto;
 	double deuda;
-	double interés;
+	double interes;
 	String planDePago;
 	int periodo;
 	
-	void setAtributos(double monto, double deuda, double interés, String planDePago, int periodo){
+	void setAtributos(double monto, double deuda, double interes, String planDePago, int periodo){
 		this.monto = monto;
 		this.deuda = deuda;
-		this.interés = interés;
+		this.interes = interes;
 		this.planDePago = planDePago;
 		this.periodo = periodo;
 	};
@@ -22,8 +22,8 @@ public class Préstamo extends ProductoBancario{
 	double getDeuda(){
 		return deuda;
 	};
-	double getInterés(){
-		return interés;
+	double getInteres(){
+		return interes;
 	};
 	String getPlanDePago(){
 		return planDePago;

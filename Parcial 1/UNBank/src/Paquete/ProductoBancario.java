@@ -3,16 +3,16 @@ import java.util.Calendar;
 
 public class ProductoBancario {
 	
-	String código;
+	String codigo;
 	Calendar fechaDeOrigen;
 	
-	void setAtributos(String código, Calendar fechaDeOrigen){
-		this.código = código;
+	void setAtributos(String codigo, Calendar fechaDeOrigen){
+		this.codigo = codigo;
 		this.fechaDeOrigen = fechaDeOrigen;
 	};
 	
-	String getCódigo(){
-		return código;
+	String getCodigo(){
+		return codigo;
 	};
 	
 	Calendar getFechaDeOrigen(){

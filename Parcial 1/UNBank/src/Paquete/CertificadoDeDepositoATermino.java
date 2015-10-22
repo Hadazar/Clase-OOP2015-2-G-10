@@ -1,16 +1,16 @@
 package Paquete;
 import java.util.Calendar;
 
-public class CertificadoDeDepósitoATérmino extends ProductoBancario{
+public class CertificadoDeDepositoATermino extends ProductoBancario{
 	
 	int periodo;
 	Calendar fechaDeOrigen;
-	double interés;
+	double interes;
 	
-	void setAtributos(int periodo, Calendar fechaDeOrigen, double interés){
+	void setAtributos(int periodo, Calendar fechaDeOrigen, double interes){
 		this.periodo = periodo;
 		this.fechaDeOrigen = fechaDeOrigen;
-		this.interés = interés;
+		this.interes = interes;
 	};
 	
 	int getPeriodo(){
@@ -21,7 +21,7 @@ public class CertificadoDeDepósitoATérmino extends ProductoBancario{
 		return fechaDeOrigen;
 	};
 	
-	double getInterés(){
-		return interés;
+	double getInteres(){
+		return interes;
 	};
 }
