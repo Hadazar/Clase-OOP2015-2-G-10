@@ -3,7 +3,7 @@ package Paquete;
 public class Prestamo extends ProductoBancario{
 
 	double monto;
-	double deuda
+	double deuda;
 	double interes;
 	String planDePago;
 	int periodo;
