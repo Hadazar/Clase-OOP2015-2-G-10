@@ -3,25 +3,39 @@ import java.util.Calendar;
 
 public class CertificadoDeDepositoATermino extends ProductoBancario{
 	
-	int periodo;
-	Calendar fechaDeOrigen;
+	int periodoTotal;
+	int periodotrancurrido;
 	double interes;
+	double capitalInvertido;
+	double capitalTotal;
 	
-	void setAtributos(int periodo, Calendar fechaDeOrigen, double interes){
-		this.periodo = periodo;
-		this.fechaDeOrigen = fechaDeOrigen;
+	CertificadoDeDepositoATermino(Cliente clienteAsociado, double capitalInvertido, String código,int periodoTotal, Calendar fechaDeOrigen, Calendar fechaActual){
+		super(codigo, fechaDeOrigen, fechaActual, clienteAsociado);
+		this.periodoTotal = periodoTotal;
+		this.periodoTrancurrido = 
 		this.interes = interes;
+		this.capitalInvertido = capitalInvertido;
+		capitalTotal = capitalInvertido + capitalInvertido * interes * periodoTrancurrido;
 	};
+	
+	void setInteres(double interes){
+		this.interes = interes;	
+	}
 	
 	int getPeriodo(){
 		return periodo;
 	};
 	
-	Calendar getFechaDeOrigen(){
-		return fechaDeOrigen;
-	};
-	
 	double getInteres(){
 		return interes;
 	};
+	
+	double getCapital(){
+		return capital;
+	}
+	
+	void retirar(double retiro){
+		capitalTotal = capitalTotal - retiro;
+		dinero
+	}
 }
