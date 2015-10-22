@@ -1,4 +1,4 @@
-package Paquete;
+package Paquete
 
 public class Cuenta extends ProductoBancario{
 
