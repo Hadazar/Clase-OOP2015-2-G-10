@@ -1,44 +1,47 @@
 package Paquete;
-import java.util.Scanner;
 
 public class Banco {
 	
-	private static String nombre = "UNBank";
+	private String nombre;
+	private ClienteAdulto[] listaClientesAdultos = new ClienteAdulto[100];
+	private int cantidadClientesAdultos = 0;
+	private ClienteJoven[] listaClientesjoven = new ClienteJoven[100];
+	private int cantidadClientesJoven = 0;
+	private int cantidadClientes = 0;
 	
-	public static void main (String args []){
-		
-		Scanner leer = new Scanner (System.in);
-		
-		
-		System.out.printf("%98s%s%s\n\n%s\n\n%s\n%s\n", "Bienvenido a ", nombre, " !", "Seleccione su rol:", "A. Cliente", "B. Banco");
-		char opcion = leer.next().toUpperCase().charAt(0);
-		
-		
-		switch (opcion){
-			case 'A': 
-				System.out.printf("%s\n\n%s\n%s\n","Seleccione un producto bancario:", "1. Certificado de depósito a término (CDT).", "2. Cuenta de ahorros.");
-				System.out.printf("%s\n%s\n%s\n","3. Cuenta joven.","4. Tarjeta crédito", "5. UNPréstamo");
-				opcion =  leer.next().toUpperCase().charAt(0);
-				switch (opcion){
-					case '1':
-						break;
-					case '2':
-						break;
-					case '3':
-						break;
-					case '4':
-						break;
-					case '5':
-						break;
-					default:
-				}
-				break;
-			case 'B':
-				System.out.printf("%s\n\n%s\n%s\n%s\n","Seleccione una operación:", "1. Establecer el intereres","2. Cobrar deudas", "3. Consultar cantidad de productos bancarios activos");
-				break;
-			default: System.out.println("El carácter introducido no es válido, se seleccionará la opción A");
-		};
-		
-		leer.close();
+	public void setNombre (String nombre){
+		this.nombre = nombre;
 	};
+	
+	public String getNombre (){
+		return nombre;
+	};
+	
+	public void setListaClientesAdultos (ClienteAdulto cliente){
+		listaClientesAdultos[cantidadClientesAdultos] = cliente;
+	};
+	
+	public Cliente getCliente (String cliente){
+		int posicion = 0;
+		while (posicion < cantidadClientes){
+			if (listaClientesAdultos[posicion].getNombre() == cliente){
+				break;
+			}
+			posicion++;
+		}
+		return listaClientesAdultos[posicion];
+	};
+	
+	public void cobrarDeudas (String clientes){
+		if (clientes == "todos los clientes"){
+			for (int i = 0; i < cantidadClientes; i++){
+				listaClientes[i].pagarDeudas
+			}
+		}
+		else{
+			
+		}
+	}
+	
+	
 }

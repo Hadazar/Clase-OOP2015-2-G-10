@@ -1,57 +1,28 @@
 package Paquete;
 
-public class Cliente {
+public class Cliente extends Persona{
 	
-	 String nombre;
-	 String documento;
-	 String telefono;
-	 double deuda;
-	 double capitalTotal;
-	 int dineroBolsillo;
-	 String tipo;
-	 int númeroDeProductosBancarios;
 	 
-	 void setAtributos(String nombre, String documento, String telefono, double deuda, double capitalTotal, int dineroBolsillo, String tipo, int númeroDeProductosBancarios){
-		 this.nombre = nombre;
-		 this.documento = documento;
-		 this.telefono = telefono;
-		 this.deuda = deuda;
-		 this.capitalTotal = capitalTotal;
-		 this.dineroBolsillo = dineroBolsillo;
-		 this.tipo = tipo;
-		 this.númeroDeProductosBancarios = númeroDeProductosBancarios;
-	 };
+	 private double deuda;
+	 private double capitalTotal;
+	 private double capitalNeto;
 	 
-	 String getNombre(){
-		 return nombre;
-	 };
+	 Cliente (String nombre, int edad, String documento, String telefono, double dineroBolsillo, double ingresosMensuales){
+		 super (nombre, edad, documento, telefono, dineroBolsillo, ingresosMensuales);
+		 deuda = 0;
+		 capitalTotal = dineroBolsillo;
+		 capitalNeto = dineroBolsillo;
+	 }
 	 
-	 String getDocumento(){
-		 return documento;
-	 };
-	 
-	 String getTelefono(){
-		 return telefono;
-	 };
-	 
-	 double getDeuda(){
+	 public double getDeuda(){
 		 return deuda;
 	 };
 	 
-	 double getCapitalTotal(){
+	 public double getCapitalTotal(){
 		 return capitalTotal;
 	 };
 	 
-	 int getDineroBolsillo(){
-		 return dineroBolsillo;
+	 public double getcapitalNeto(){
+		 return capitalNeto;
 	 };
-	 
-	 String getTipo(){
-		 return tipo;
-	 };
-	 
-	 int getNúmeroDeProductosBancarios(){
-		 return númeroDeProductosBancarios;
-	 };
-	 
 }

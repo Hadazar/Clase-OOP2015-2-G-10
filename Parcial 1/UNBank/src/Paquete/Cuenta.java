@@ -1,26 +1,50 @@
 package Paquete;
+import java.util.Calendar;
 
 public class Cuenta extends ProductoBancario{
 
-	double deposito;
+	private double deposito;
+	private double costoRetiro;
+	private double costoTranferencia;
 	
-	 void setDepostito (double deposito){
+	Cuenta(Calendar fechaDeOrigen, String bancoAsociado, double deposito){
+		super(fechaDeOrigen, bancoAsociado);
+		costoRetiro = 0.001;
+		costoTranferencia = 0.001;
+	}
+	
+	 public void setDeposito(double deposito){
 		 this.deposito = deposito;
 	 };
 	 
-	 double getDeposito(){
+	 public double getDeposito(){
 		 return deposito;
 	 };
-	 
-	 int retirar (int retiro){
-		 
+
+	 public void setCostoRetiro(double costoRetiro){
+		 this.costoRetiro = costoRetiro;
 	 };
 	 
-	 int depositar (int deposito){
-		 
+	 public double getCostoRetiro(){
+		 return costoRetiro;
+	 };
+
+	 public void setcostoTranferencia(double costoTranferencia){
+		 this.costoTranferencia = costoTranferencia;
 	 };
 	 
-	 double transferir(double dinero, String numeroDeCuenta){
-		 
+	 public double getCostoTranferencia(){
+		 return costoTranferencia;
+	 };
+	 
+	 public double retirar (double retiro){
+		 deposito = deposito - retiro - retiro * costoRetiro;
+		 if (deposito < 0){retiro += deposito; deposito = 0;}
+		 return retiro;
+	 };
+	 
+	 public double depositar (double deposito){
+		 this.deposito = this.deposito + deposito;
+		 return -deposito;
 	 };
 }

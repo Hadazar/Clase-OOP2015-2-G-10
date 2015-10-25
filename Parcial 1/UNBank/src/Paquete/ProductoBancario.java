@@ -3,17 +3,21 @@ import java.util.Calendar;
 
 public class ProductoBancario {
 	
-	private String codigo;
+	private int codigo;
+	private static int referencia = 100000;
 	private Calendar fechaDeOrigen;
 	private static Calendar fechaActual;
+	private String bancoAsociado;
 	
-	public void setAtributos(String codigo, Calendar fechaDeOrigen, Calendar fechaActual){
-		this.codigo = codigo;
+	ProductoBancario (Calendar fechaDeOrigen, String bancoAsociado){
 		this.fechaDeOrigen = fechaDeOrigen;
-		this.fechaActual = fechaActual;
-	};
+		this.bancoAsociado = bancoAsociado;
+		codigo = referencia + 1;
+		referencia++;
+		
+	}
 	
-	public String getCodigo(){
+	public int getCodigo(){
 		return codigo;
 	};
 	
@@ -21,8 +25,15 @@ public class ProductoBancario {
 		return fechaDeOrigen;
 	};
 	
+	public static void setFechaActual(Calendar fechaEstablecida){
+		fechaActual = fechaEstablecida;
+	};
+	
 	public Calendar getFechaActual(){
 		return fechaActual;
 	};
 	
+	public String bancoAsociado(){
+		return bancoAsociado;
+	}
 }
