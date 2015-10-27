@@ -82,7 +82,7 @@ public class ClienteAdulto extends Cliente{
 			}; // Fin de while
 		} // Fin de Condicional
 		setDineroBolsillo(getDineroBolsillo() + pago);
-	}; // Fin de método pagarDeudas
+	}; // Fin de mÃ©todo pagarDeudas
 	
 	public void transferirCuenta (double transferencia, int codigo, int codigo2){
 		int posicion = 0;
@@ -92,7 +92,7 @@ public class ClienteAdulto extends Cliente{
 		while (posicion < cantidadCuentasDeAhorros){
 			if (listaCuentasDeAhorros[posicion].getCodigo() == codigo){seEncontro = true; break;}
 		}
-		if (seEncontro == true){
+		if (seEncontro == false){
 			posicion = 0;
 			while (posicion < cantidadCertificadosDeDepositoATermino){
 				if (listaCertificadosDeDepositoATermino[posicion].getCodigo() == codigo){break;}
@@ -104,7 +104,7 @@ public class ClienteAdulto extends Cliente{
 		while (posicion2 < cantidadCuentasDeAhorros){
 			if (listaCuentasDeAhorros[posicion2].getCodigo() == codigo2){seEncontro = true; break;}
 		}
-		if (seEncontro == true){
+		if (seEncontro == false){
 			posicion2 = 0;
 			while (posicion2 < cantidadCertificadosDeDepositoATermino){
 				if (listaCertificadosDeDepositoATermino[posicion2].getCodigo() == codigo2){break;}
@@ -113,5 +113,7 @@ public class ClienteAdulto extends Cliente{
 		};
 		if (esCDT == false){transferencia = listaCuentasDeAhorros[posicion].retirar(transferencia);}
 		else {transferencia = listaCertificadosDeDepositoATermino[posicion].retirar(transferencia);}
+		if (esCDT2 == false){listaCuentasDeAhorros[posicion2].depositar(transferencia);}
+		else {listaCertificadosDeDepositoATermino[posicion2].depositar(transferencia);}
 	}
 }
