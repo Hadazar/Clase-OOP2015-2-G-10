@@ -65,8 +65,30 @@ public class ClienteAdulto extends Cliente{
 		return listaTarjetasCredito[posicion];
 	};
 	
-	public void pagarDeudas(int codigo, double pago){
-		setDineroBolsillo(getDineroBolsillo() - pago);
+	public void calcularDeuda(){
+		double deuda = 0;
+		for (int i = 0; i < cantidadTarjetasCredito, i++){
+			deuda += listaTarjetasCredito[posicion].getDeuda();
+		}
+		setDeuda(deuda);
+	}
+	
+	public void pagarDeudas(int codigo, double pago, boolean enEfectivo){
+		if (enEfectivo == true){
+			if (getDineroBolsillo() - pago < 0){pago = getDineroBolsillo();}
+			else{setDineroBolsillo(getDineroBolsillo() - pago);}
+		}
+		else{	
+			double acumulado = 0;
+			double retiro;
+			for(int i = 0; i < cantidadCuentasDeAhorros; i++){
+				retiro = listaCuentasDeAhorros[i].retirar(pago);
+				acumulado = acumulado + retiro;
+				if (retiro == pago){break;}
+				pago = pago - acumulado;
+			}
+			pago = acumulado;
+		}
 		if (codigo == 0){
 			int posicion = 0;
 			while (posicion < cantidadTarjetasCredito){
@@ -83,6 +105,15 @@ public class ClienteAdulto extends Cliente{
 		} // Fin de Condicional
 		setDineroBolsillo(getDineroBolsillo() + pago);
 	}; // Fin de método pagarDeudas
+	
+	public void pagarDeudasPorCompleto(){
+		calcularDeuda();
+		double deuda = getDeuda();
+		pagarDeudas(0, deuda, true);
+		calcularDeuda();
+		deuda = getDeuda();
+		pagarDeudas(0, deuda, false);
+	}
 	
 	public void transferirCuenta (double transferencia, int codigo, int codigo2){
 		int posicion = 0;
