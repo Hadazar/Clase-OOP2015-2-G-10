@@ -14,6 +14,10 @@ public class Cliente extends Persona{
 		 capitalNeto = dineroBolsillo;
 	 }
 	 
+	 void setDeuda(double deuda){
+	 	this.deuda = deuda;
+	 }
+	 
 	 public double getDeuda(){
 		 return deuda;
 	 };
