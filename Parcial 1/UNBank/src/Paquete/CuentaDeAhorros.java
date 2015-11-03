@@ -9,7 +9,7 @@ public class CuentaDeAhorros extends Cuenta{
 	private static Calendar[] fechasCambioTasaInteres =new Calendar[100];
 	private static int cantidadFechasCambioInteres = 0;
 	private double interes;
-	private double capital;
+	private double inversion;
 	
 	CuentaDeAhorros (Calendar fechaDeOrigen, String bancoAsociado, double deposito, Calendar fechaActual){
 		super(fechaDeOrigen, bancoAsociado, deposito);
@@ -20,7 +20,7 @@ public class CuentaDeAhorros extends Cuenta{
 		long cantidadMilisegundos = fechaActual.getTimeInMillis() - fechaDeOrigen.getTimeInMillis();
 		long cantidadMeses = cantidadMilisegundos / (1000 * 60 * 60 * 24 * 30);
 		interes = cantidadMeses * tasaInteresActual * deposito;
-		capital = deposito + interes;
+		deposito = inversion + interes;
 	}
 	
 	public void setTasaInteres (double tasaInteres, Calendar fechaCambio){
@@ -51,7 +51,7 @@ public class CuentaDeAhorros extends Cuenta{
 		return interes;
 	};
 	
-	public double getCapital (){
+	public double getDeposito (){
 		return capital;
 	};
 }
