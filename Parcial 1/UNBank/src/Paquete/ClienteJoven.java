@@ -6,6 +6,7 @@ public class ClienteJoven extends Cliente{
   private int cantidadCuentasJoven = 0;
   private UNPrestamo[] listaUNPrestamos = new UNPrestamo[100];
   private int cantidadUNPrestamos = 0;
+  private int cantidadproductosBancariosActivos;
   
   ClienteJoven (String nombre, int edad, String documento, String telefono, double dineroBolsillo, double ingresosMensuales){
     super(nombre, edad, documento, telefono, dineroBolsillo, ingresosMensuales);
@@ -39,6 +40,21 @@ public class ClienteJoven extends Cliente{
     return listaUNPrestamos[posicion];
   }
   
+  public void setCantidadProductosBancariosActivos(){
+	int cantidadProductosBancariosActivos = 0;
+	
+	for (int i = 0; i < cantidadCuentasDeAhorros; i++){
+		if (listaCuentasDeAhorros[i].getDeposito > 0 ){cantidadProductosBancariosActivos++;};
+	}
+		
+	for (int i = 0; i < cantidadCertificadosDeDepositoAtermino; i++){
+		if (listaertificadosDeDepositoAtermino[i].getDeposito > 0 ){cantidadProductosBancariosActivos++;};	
+	}
+	for (int i = 0; i < cantidadTarjetascredito; i++){
+		if (listaTarjetascredito[i].getDeuda> 0 ){cantidadTarjetascredito++;};
+	}
+  }
+	
   public void calcularDeuda(){
   	double deuda = 0;
 	for (int i = 0; i < cantidadTarjetasCredito, i++){
