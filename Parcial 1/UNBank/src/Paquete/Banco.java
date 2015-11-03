@@ -21,13 +21,17 @@ public class Banco {
 		listaClientesAdultos[cantidadClientesAdultos] = cliente;
 	};
 	
-	public ClienteAdulto getClienteAdulto (String cliente){
+	public ClienteAdulto getClienteAdulto throws Exception(String cliente){
 		int posicion = 0;
+		boolean seEncontro = false;
 		while (posicion < cantidadClientesAdultos){
 			if (listaClientesAdultos[posicion].getNombre() == cliente){
-				break;
+				break; seEncontro = true;
 			}
 			posicion++;
+		}
+		if (seEncontro == false){
+			throw new Exception ("El nombre suministrado no pertenece a ningún cliente registrado);
 		}
 		return listaClientesAdultos[posicion];
 	};
@@ -36,23 +40,32 @@ public class Banco {
 		listaClientesJovenes[cantidadClientesJovenes] = cliente;
 	};
 	
-	public ClienteJovene getClienteJoven (String cliente){
+	public ClienteJovene getClienteJoven (String cliente) throws Exception{
 		int posicion = 0;
+		boolean seEncontro = false;
+		
 		while (posicion < cantidadClientesJovenes){
 			if (listaClientesJovenes[posicion].getNombre() == cliente){
-				break;
+				break; seEncotro = true;
 			}
 			posicion++;
 		}
+		
+		if (seEncontro == false){
+			throw new Exception ("El nombre suministrado no pertenece a ningún cliente registrado);
+		}
+		
 		return listaClientesJovenes[posicion];
 	};
 	
-	public void cobrarDeudas (String cliente){
+	public void cobrarDeudas throws Exception(String cliente){
 		if (clientes == "todos los clientes"){
 			for (int i = 0; i < cantidadClientesAdultos; i++){
 				listaClientesAdultos[i].calcularDeuda();
 				double deuda = listaClientesAdultos[i].getDeuda();
 				listaClientesAdultos[i].pagarDeudas(0, deuda, false);
+			}
+			for (int i = 0; i < cantidadClientesJovenes; i++){
 				listaClientesJovenes[i].calcularDeuda();
 				deuda = listaClientesJovenes[i].getDeuda();
 				listaClientesJovenes[i].pagarDeudas(0, deuda, false);
@@ -60,22 +73,31 @@ public class Banco {
 		}
 		else{
 			int posicion = 0;
-			booleano esAdulto = false;
+			boolean esAdulto = false;
+			boolean seEncontro = false;
+			
 			while (posicion < cantidadClientesAdultos){
-				if(listaClientesAdultos[posicion].getNombre == nombre){esAdulto = true; break;}
+				if(listaClientesAdultos[posicion].getNombre == nombre){esAdulto = true; seEncontro = true; break;}
 				posicion++;
 			}
 			if (esAdulto == false){
 				posicion = 0;
 				while (posicion < cantidadClientesJovenes){
-				if(listaClientesJovenes[posicion].getNombre == nombre){break;}
+				if(listaClientesJovenes[posicion].getNombre == nombre){seEncontro = true; break;}
 				posicion++;
 				}
 			}
-			if(esAdulto == true){listaClientesAdultos[posicion].(0, deuda, false);}
-			else{listaClientesJovenes[posicion].(0, deuda, false);}
+			
+			if (seEncontro == false){
+				throw new Exception ("El nombre suministrado no pertenece a ningún cliente registrado);
+			}
+		
+			if(esAdulto == true){listaClientesAdultos[posicion].pagarDeudas(0, deuda, false);}
+			else{listaClientesJovenes[posicion].pagarDeudas(0, deuda, false);}
 		}
 	}
 	
-	
+	public int colsultarCantidadTotalProductosBancariosActivos(){
+		
+	}
 }
