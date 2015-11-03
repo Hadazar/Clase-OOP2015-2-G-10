@@ -12,7 +12,7 @@ public class CertificadoDeDepositoATermino extends Cuenta{
 	private static Calendar[ ] fechasCambioTasaInteres = new Calendar [100];
 	private static int cantidadFechasCambioInteres = 0;
 	private double interes;
-	private double capital;
+	private double inversion;
 	
 	CertificadoDeDepositoATermino(Calendar fechaDeOrigen, String bancoAsociado, double deposito, Calendar fechaTermino, Calendar fechaActual){
 		super(fechaDeOrigen, bancoAsociado, deposito);
@@ -25,7 +25,7 @@ public class CertificadoDeDepositoATermino extends Cuenta{
 		long cantidadTotalMilisegundos = fechaTermino.getTimeInMillis() - fechaDeOrigen.getTimeInMillis();
 		periodoTotal = (int)(cantidadTotalMilisegundos / (1000 * 60 * 60 * 24 * 30));
 		interes = periodoTranscurrido * tasaInteresActual * getDeposito();
-		capital = getDeposito() + interes;
+		deposito = inversion + interes;
 		
 	};
 	
@@ -51,7 +51,7 @@ public class CertificadoDeDepositoATermino extends Cuenta{
 			interes = interes + cantidadMeses * tasaInteresActual * getDeposito();
 			posicion++;
 		};
-		capital = getDeposito() + interes;
+		deposito = inversion + interes;
 	}
 	
 	double getTasaInteres(){
