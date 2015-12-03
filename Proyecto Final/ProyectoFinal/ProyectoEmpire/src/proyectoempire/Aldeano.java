@@ -11,7 +11,7 @@ package proyectoempire;
  */
 public class Aldeano extends Objeto{
     
-    public Aldeano (double [] posicion){
+    public Aldeano (int [] posicion){
         super(posicion);
     }
     
