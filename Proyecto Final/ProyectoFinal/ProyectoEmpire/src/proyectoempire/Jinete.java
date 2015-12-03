@@ -11,7 +11,7 @@ package proyectoempire;
  */
 public class Jinete extends Unidad{
     
-    public Jinete (double[] posicion){
+    public Jinete (int[] posicion){
         super(posicion);
     }
 }
