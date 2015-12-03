@@ -11,17 +11,17 @@ package proyectoempire;
  */
 public class Objeto {
     
-   private double[] posicion =  new double[2];
+   private int[] posicion =  new double[2];
    private double vida;
    
-   public Objeto(double[] posicion){
+   public Objeto(int[] posicion){
        establecerPosicion(posicion);
    }
   
-   public void establecerPosicion(double[] posicion){
+   public void establecerPosicion(int[] posicion){
        this.posicion = posicion;
    }
-   public double[] obtenerPosicion(){
+   public int[] obtenerPosicion(){
        return posicion;
    }
    
