@@ -11,7 +11,7 @@ package proyectoempire;
  */
 public class Espadachin extends Unidad{
     
-    public Espadachin(double[] posicion){
+    public Espadachin(int[] posicion){
         super(posicion);
     }
 }
