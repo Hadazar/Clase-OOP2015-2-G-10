@@ -48,7 +48,11 @@ public class Unidad extends Objeto{
    public double atacar(Unidad unidad){
        return unidad.obtenerVida() - ataque + unidad.obtenerArmadura();
    }
-   public void moverse(double[] posicion){
+   public void moverse throws Exception(double[] posicion){
+      int distanciaX = this.posicion[0]-posicion[0];
+      int distanciaY = this.posicion[1]-posicion[1];
+      int distancia = distanciaX + distanciaY;
+      if (distancia > velocidad){throw new Exception ("La casilla se sale del rango de mivimiento de la unidad")};
        establecerPosicion(posicion);
    }
 }
