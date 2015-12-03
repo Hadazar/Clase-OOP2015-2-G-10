@@ -11,7 +11,7 @@ package proyectoempire;
  */
 public class GaleriaDeTiroConArco extends Edificio{
     
-    public GaleriaDeTiroConArco(double[] posicion){
+    public GaleriaDeTiroConArco(int[] posicion){
         super(posicion);
     }
     
