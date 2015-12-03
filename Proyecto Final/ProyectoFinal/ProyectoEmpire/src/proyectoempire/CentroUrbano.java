@@ -11,7 +11,7 @@ package proyectoempire;
  */
 public class CentroUrbano extends Edificio{
     
-    public CentroUrbano(double[] posicion){
+    public CentroUrbano(int[] posicion){
         super(posicion);
     }
     
