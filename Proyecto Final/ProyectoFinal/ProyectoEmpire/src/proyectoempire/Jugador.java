@@ -10,5 +10,34 @@ package proyectoempire;
  * @author HéctorAugusto
  */
 public class Jugador {
-    Unidad[] unidades = new Unidad[100];
+    
+    int cantidadUnidades = 0;
+    int recursos;
+    Unidad[] unidades = new Unidad[ 100 ];
+    
+    public Jugador(){
+        
+    }
+    
+    public void establecerRecursos(int recursos){
+        this.recursos = recursos;
+    }
+    
+    public int obtenerRecursos(){
+        return recursos;
+    }
+    
+    public void establecerUnidades(Unidad unidad){
+        unidades[ cantidadUnidades ] = unidad;
+        cantidadUnidades++;
+    }
+    
+    public Unidad obtenerUnidades(int[] posicion){
+        int buscador = 0;
+        while ( buscador < cantidadUnidades ){
+            if ( unidades[ buscador].obtenerposicion() == posicion ){break;}
+            buscador++;
+        }
+        return unidades[buscador];
+    }
 }
