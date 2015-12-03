@@ -11,7 +11,7 @@ package proyectoempire;
  */
 public class Establo extends Edificio{
     
-    public Establo (double[] posicion){
+    public Establo (int[] posicion){
         super(posicion);
     }
     
