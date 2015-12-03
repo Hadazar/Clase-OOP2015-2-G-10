@@ -11,7 +11,7 @@ package proyectoempire;
  */
 public class Arquero extends Unidad{
     
-    public Arquero(double[] posicion){
+    public Arquero(int[] posicion){
         super(posicion);
     }
 }
